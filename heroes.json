@@ -1,21 +1,21 @@
 {
   "heroes": [
     {
-      "id": 3,
-      "name": "Морской герой",
-      "description": "Как аквамен, но не из DC",
+      "id": "1b210304-541b-4425-905c-04cb3861e540",
+      "name": "фывыф",
+      "description": "выффыв",
       "element": "water"
     },
     {
-      "id": "0b1bf8b0-024f-4213-8b04-d48aa2b3f2d6",
-      "name": "фывфыв",
-      "description": "фывфыв",
-      "element": "fire"
+      "id": "95200551-e837-4692-9833-f3b969b9fa70",
+      "name": "asdasd",
+      "description": "asdsad",
+      "element": "water"
     },
     {
-      "id": "f686a42f-412e-4308-9216-abb97d9ee966",
-      "name": "asdasdasdsad",
-      "description": "asdsadaasd",
+      "id": "7f111377-4e17-4f16-90bd-eff14923ac29",
+      "name": "asd",
+      "description": "sad",
       "element": "wind"
     }
   ],

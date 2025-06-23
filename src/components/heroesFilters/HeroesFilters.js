@@ -4,7 +4,7 @@ import {useHttp} from '../../hooks/http.hook';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { filtersFetching, filtersFetched, filtersFetchingError, filterActive } from '../../actions';
+import { fetchFilters, filterActive } from '../../actions';
 import Spinner from '../spinner/Spinner';
 
 // Задача для этого компонента:
@@ -15,17 +15,14 @@ import Spinner from '../spinner/Spinner';
 // Представьте, что вы попросили бэкенд-разработчика об этом
 
 const HeroesFilters = () => {
-    const filters = useSelector(state => state.filters);
-    const filtersLoadingStatus = useSelector(state => state.filtersLoadingStatus)
-    const activeFilter = useSelector(state => state.activeFilter)
+    const filters = useSelector(state => state.filters.filters);
+    const filtersLoadingStatus = useSelector(state => state.filters.filtersLoadingStatus)
+    const activeFilter = useSelector(state => state.filters.activeFilter)
     const dispatch = useDispatch();
     const {request} = useHttp();
 
     useEffect(() => {
-        dispatch(filtersFetching());
-        request("http://localhost:3001/filters")
-            .then(data => dispatch(filtersFetched(data)))
-            .catch(() => dispatch(filtersFetchingError()))
+        dispatch(fetchFilters(request));
 
         // eslint-disable-next-line
     }, []);

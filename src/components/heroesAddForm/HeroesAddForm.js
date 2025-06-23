@@ -15,9 +15,9 @@ import { useHttp } from '../../hooks/http.hook';
 // данных из фильтров
 
 const HeroesAddForm = () => {
-    const heroes = useSelector(state => state.heroes);
-    const filters = useSelector(state => state.filters);
-    const {name, description, element} = useSelector(state => state.newHero);
+    const heroes = useSelector(state => state.heroes.heroes);
+    const filters = useSelector(state => state.filters.filters);
+    const {name, description, element} = useSelector(state => state.heroes.newHero);
     const {request} = useHttp();
 
     const dispatch = useDispatch();
@@ -44,7 +44,10 @@ const HeroesAddForm = () => {
 
     const renderOptionsList = (arr) => {
             return arr.map(({name, label}) => {
-                return <option value={name}>{label}</option>;
+                if (name !== 'all') {
+                    return <option key={uuidv4()} value={name}>{label}</option>;    
+                } else return null;
+                
             })
         }
 
