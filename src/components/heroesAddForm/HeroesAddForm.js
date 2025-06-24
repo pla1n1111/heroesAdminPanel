@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { heroChangingDescription, heroChangingName, heroChangingElement, heroesFetched, heroesFetchingError } from '../../actions';
+import { heroesFetched, heroesFetchingError, heroChangingDescription, heroChangingName, heroChangingElement } from '../heroesList/heroesSlice';
 import { useHttp } from '../../hooks/http.hook';
 
 // Задача для этого компонента:

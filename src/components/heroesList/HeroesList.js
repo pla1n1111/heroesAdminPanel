@@ -2,7 +2,8 @@ import {useHttp} from '../../hooks/http.hook';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { heroesFetched, heroesFetchingError, fetchHeroes } from '../../actions';
+import { heroesFetched, heroesFetchingError } from './heroesSlice';
+import { fetchHeroes } from '../../actions/index'
 import HeroesListItem from "../heroesListItem/HeroesListItem";
 import Spinner from '../spinner/Spinner';
  
